@@ -33,6 +33,8 @@ import testJPA20241104CentroEducativo.model.Estudiante;
 import testJPA20241104CentroEducativo.model.Materia;
 import testJPA20241104CentroEducativo.model.Profesor;
 import testJPA20241104CentroEducativo.model.ValoracionMateria;
+import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
 
 
 
@@ -113,7 +115,7 @@ public class PanelPrincipal {
 		jcbMateria = new JComboBox<Materia>();
 		GridBagConstraints gbc_jcbMateria = new GridBagConstraints();
 		gbc_jcbMateria.gridwidth = 2;
-		gbc_jcbMateria.insets = new Insets(0, 0, 5, 5);
+		gbc_jcbMateria.insets = new Insets(0, 0, 5, 0);
 		gbc_jcbMateria.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jcbMateria.gridx = 1;
 		gbc_jcbMateria.gridy = 0;
@@ -130,7 +132,7 @@ public class PanelPrincipal {
 		jcbProfesor = new JComboBox<Profesor>();
 		GridBagConstraints gbc_jcbProfesor = new GridBagConstraints();
 		gbc_jcbProfesor.gridwidth = 2;
-		gbc_jcbProfesor.insets = new Insets(0, 0, 5, 5);
+		gbc_jcbProfesor.insets = new Insets(0, 0, 5, 0);
 		gbc_jcbProfesor.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jcbProfesor.gridx = 1;
 		gbc_jcbProfesor.gridy = 1;
@@ -158,11 +160,27 @@ public class PanelPrincipal {
 		
 		GridBagConstraints gbc_jcbNota = new GridBagConstraints();
 		gbc_jcbNota.gridwidth = 2;
-		gbc_jcbNota.insets = new Insets(0, 0, 5, 5);
+		gbc_jcbNota.insets = new Insets(0, 0, 5, 0);
 		gbc_jcbNota.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jcbNota.gridx = 1;
 		gbc_jcbNota.gridy = 2;
 		panelProfesorMateria.add(jcbNota, gbc_jcbNota);
+		
+		JLabel lblNewLabel_5 = new JLabel("Fecha:");
+		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
+		gbc_lblNewLabel_5.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_5.insets = new Insets(0, 0, 0, 5);
+		gbc_lblNewLabel_5.gridx = 0;
+		gbc_lblNewLabel_5.gridy = 3;
+		panelProfesorMateria.add(lblNewLabel_5, gbc_lblNewLabel_5);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField();
+		GridBagConstraints gbc_formattedTextField = new GridBagConstraints();
+		gbc_formattedTextField.insets = new Insets(0, 0, 0, 500);
+		gbc_formattedTextField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_formattedTextField.gridx = 1;
+		gbc_formattedTextField.gridy = 3;
+		panelProfesorMateria.add(formattedTextField, gbc_formattedTextField);
 		GridBagConstraints gbc_btnActualizarAlumnado = new GridBagConstraints();
 		gbc_btnActualizarAlumnado.gridx = 2;
 		gbc_btnActualizarAlumnado.gridy = 3;
