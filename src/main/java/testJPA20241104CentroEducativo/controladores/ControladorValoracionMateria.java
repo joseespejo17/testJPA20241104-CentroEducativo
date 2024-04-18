@@ -1,5 +1,6 @@
 package testJPA20241104CentroEducativo.controladores;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -46,13 +47,14 @@ public class ControladorValoracionMateria extends SuperControladorJPA{
 	/**
 	 * 
 	 */
-	public void persist(Profesor p, int nota, Materia m, Estudiante e) {
+	public void persist(Profesor p, int nota, Materia m, Estudiante e, Date fecha) {
 		EntityManager em = getEntityManager();
 		ValoracionMateria vm = new ValoracionMateria();
 		
 		vm.setIdEstudiante(e.getId());
 		vm.setIdMateria(m.getId());
 		vm.setIdProfesor(p.getId());
+		vm.setFecha(fecha);
 		
 		em.getTransaction().begin();
 		em.persist(vm);
@@ -61,11 +63,12 @@ public class ControladorValoracionMateria extends SuperControladorJPA{
 	}
 	
 
-	public void update(ValoracionMateria vm, int nota) {
+	public void update(ValoracionMateria vm, int nota, Date fecha) {
 		EntityManager em = getEntityManager();
 		
 		em.getTransaction().begin();
 		vm.setValoracion(nota);
+		vm.setFecha(fecha);
 		em.merge(vm);
 		em.getTransaction().commit();
 	

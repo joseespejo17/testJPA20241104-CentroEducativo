@@ -1,5 +1,7 @@
 package testJPA20241104CentroEducativo.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +19,15 @@ public class ValoracionMateria  {
 	private int idMateria;
 	private int idEstudiante;
 	private float valoracion;
+	private Date fecha;
 	
 	
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 	public int getId() {
 		return id;
 	}
